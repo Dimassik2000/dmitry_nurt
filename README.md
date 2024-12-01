@@ -1,5 +1,5 @@
 # About me
-I`m a beginner Data Engineer . I specialize in the development and optimization of data loading, transformation and unloading (ETL) processes, as well as the integration and processing of large amounts of data. I have experience working with various types of databases, including MongoDB, SQLite and other relational databases. I have experience working with big data processing tools such as Hadoop and Spark, and I am ready to apply my skills to create effective business solutions.
+I`m a beginner Data Engineer . I specialize in the development and optimization of data loading, transformation and unloading (ETL) processes, as well as the integration and processing of large amounts of data. I have experience working with various types of databases, including MongoDB, SQLite and other relational databases. 
 
 # Social Media
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/target_dima) <img src="https://img.shields.io/badge/Linkedin-7FFFD4?style=for-the-badge&logo=linkedin&logoColor=ЦВЕТ ЛОГОТИПА"/>  [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:laurajamesess@gmail.com)
