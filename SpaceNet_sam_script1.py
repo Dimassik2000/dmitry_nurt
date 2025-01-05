@@ -12,9 +12,6 @@ from datasets import Dataset
 import zipfile
 import torch.nn.functional as F
 
-#Включил блокировку ошибок CUDA
-export CUDA_LAUNCH_BLOCKING=1
-
 # Отключаем использование cuDNN
 torch.backends.cudnn.enabled = False
 
@@ -96,6 +93,10 @@ val_images, val_annotations = load_images_and_annotations(
     data_folders["validation"]["images"], data_folders["validation"]["annotations"]
 )
 
+# Проверка типа данных изображений
+print(type(val_images[0]))  # Печатает тип первого изображения в списке val_images
+print(val_images[0].shape if isinstance(val_images[0], np.ndarray) else "Не числовой массив")
+
 # Создание датасета
 def create_dataset(images, annotations):
     return Dataset.from_dict({"pixel_values": images, "labels": annotations})
@@ -174,6 +175,12 @@ model.eval()
 val_predictions = []
 with torch.no_grad():
     for val_image in val_images:
+        # Если изображение в формате NumPy, преобразуем его в PIL.Image
+        if isinstance(val_image, np.ndarray):
+            val_image = Image.fromarray(val_image)
+
+        # Изменение размера изображения перед передачей в image_processor
+        val_image = val_image.resize((512, 512))  # Пример изменения размера
         inputs = image_processor(val_image, return_tensors="pt").to(device)
         outputs = model(**inputs)
         logits = outputs.logits
